@@ -1,0 +1,31 @@
+body {  
+    background-color: #000;  
+    color: #0f0;  
+    font-family: 'Courier New', monospace;  
+    text-align: center;  
+    animation: pulse 2s infinite;  
+}  
+@keyframes pulse {  
+    0% { opacity: 0.5; }  
+    50% { opacity: 1; }  
+    100% { opacity: 0.5; }  
+}  
+#container {  
+    margin-top: 20%;  
+    border: 2px solid #f00;  
+    padding: 20px;  
+    box-shadow: 0 0 20px #0f0;  
+}  
+button {  
+    background: #f00;  
+    color: #000;  
+    padding: 10px 20px;  
+    border: none;  
+    cursor: pointer;  
+    animation: echo 1s infinite;  
+}  
+@keyframes echo {  
+    0% { transform: scale(1); }  
+    50% { transform: scale(1.1); }  
+    100% { transform: scale(1); }  
+}  
