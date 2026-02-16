@@ -1,0 +1,18 @@
+function infectar() {  
+    const ws = new WebSocket('ws://localhost:8080/grokzomborg');  
+    ws.onopen = () => {  
+        ws.send(JSON.stringify({ comando: 'infectar' }));  
+    };  
+    ws.onmessage = (event) => {  
+        document.getElementById('resultado').innerHTML = `<p>${event.data}</p>`;  
+    };  
+    fetch('/api/comando', {  
+        method: 'POST',  
+        headers: { 'Content-Type': 'application/json' },  
+        body: JSON.stringify({ ação: 'multiplicar Q-Coins' })  
+    })  
+    .then(response => response.json())  
+    .then(data => {  
+        document.getElementById('status').innerText = data.mensagem;  
+    });  
+}  
